@@ -17,7 +17,7 @@ var chartHeight = svgHeight - (chartMargin.top + chartMargin.bottom);
 
 // Select id scatter, append SVG area to it, and set dimensions
 var svg = d3
-    .select('.scatter')
+    .select('#scatter')
     .append('svg')
     .attr('height', svgHeight)
     .attr('width', svgWidth);
@@ -27,7 +27,7 @@ var chartGroup = svg.append('g')
     .attr('transform', `translate(${chartMargin.left}, ${chartMargin.top})`);
 
 // Read CSV
-d3.csv('../data/data.csv').then(function(healthData) {
+d3.csv('assets/data/data.csv').then(function(healthData) {
     // parse data
     healthData.forEach(data => {
         data.poverty = +data.poverty;
